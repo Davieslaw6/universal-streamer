@@ -11,6 +11,7 @@ import { MediaRow } from './MediaRow';
 import { Poster } from './Poster';
 import { TrailerButton } from './TrailerButton';
 import { WatchlistButton } from './WatchlistButton';
+import { WatchOverlay } from './WatchOverlay';
 
 const GROUP_ORDER: { key: AvailabilityType; label: string }[] = [
   { key: 'flatrate', label: 'Stream' },
@@ -61,26 +62,34 @@ function AvailabilityPanel({ detail }: { detail: MediaDetail }) {
                   );
                   return (
                     <li key={`${group.key}-${entry.providerId}`}>
-                      <a
+                      {/*
+                        OLD WATCH LINK — kept commented so it can be restored easily.
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex min-h-touch items-center gap-2 rounded border border-border bg-bg px-3 text-sm text-text-primary hover:bg-bg-hover"
+                        >
+                          <img
+                            src={provider.fallbackBadge}
+                            alt=""
+                            aria-hidden="true"
+                            width={20}
+                            height={20}
+                            className="rounded-sm"
+                          />
+                          {provider.name}
+                          <ExternalLink aria-hidden="true" className="h-3.5 w-3.5" />
+                          <span className="sr-only">
+                            (opens {provider.name} in a new tab)
+                          </span>
+                        </a>
+                      */}
+                      <WatchOverlay
+                        title={detail.title}
+                        providerName={provider.name}
                         href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex min-h-touch items-center gap-2 rounded border border-border bg-bg px-3 text-sm text-text-primary hover:bg-bg-hover"
-                      >
-                        <img
-                          src={provider.fallbackBadge}
-                          alt=""
-                          aria-hidden="true"
-                          width={20}
-                          height={20}
-                          className="rounded-sm"
-                        />
-                        {provider.name}
-                        <ExternalLink aria-hidden="true" className="h-3.5 w-3.5" />
-                        <span className="sr-only">
-                          (opens {provider.name} in a new tab)
-                        </span>
-                      </a>
+                      />
                     </li>
                   );
                 })}
