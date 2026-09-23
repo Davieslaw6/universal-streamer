@@ -1,0 +1,26 @@
+/* Design tokens. Components must consume these, never hardcode hex values. */
+
+:root,
+[data-theme='dark'] {
+  --bg: #0f171e;
+  --bg-elevated: #1a242f;
+  --bg-hover: #232f3e;
+  --text-primary: #ffffff;
+  --text-secondary: #b8c4ce;
+  --accent: #00a8e1;
+  --accent-hover: #3dbeea;
+  --border: #2a3b4c;
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --bg: #ffffff;
+  --bg-elevated: #f4f6f8;
+  --bg-hover: #e7ebef;
+  --text-primary: #0f171e;
+  --text-secondary: #5a6b7b;
+  --accent: #0073bb;
+  --accent-hover: #005a94;
+  --border: #dde3e8;
+  color-scheme: light;
+}
