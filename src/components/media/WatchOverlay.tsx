@@ -64,7 +64,7 @@ export function WatchOverlay({ title, providerName, href }: WatchOverlayProps) {
                   rel="noopener noreferrer"
                   className={buttonClasses({ variant: 'secondary', size: 'sm' })}
                 >
-                  Open exact page
+                  Open on service
                   <ExternalLink aria-hidden="true" className="h-3.5 w-3.5" />
                 </a>
                 <button
