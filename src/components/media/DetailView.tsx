@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ExternalLink } from 'lucide-react';
+// OLD: ExternalLink was used by the previous watch-link UI. Kept commented for easy rollback.
+// import { ExternalLink } from 'lucide-react';
 import { imageUrl, formatRuntime, formatSeasons, formatVote, releaseYear } from '@/lib/format';
 import { PROVIDERS } from '@/lib/providers/catalog';
 import { buildWatchUrl } from '@/lib/providers/deep-links';
